@@ -1,0 +1,29 @@
+ng serve --port 5566 --o  =====to run on another port
+e2e: ================end to end testing
+node_modules ================ all angular related node_modules
+package.json =================all node modules dependencies are defined
+src =====it is a main folder of angular
+app ===Main folder where we define components , modules service
+assets == we store css, js image,fonts
+environments==folder where we can define environmental variables
+index.html===main file which execute in browser
+main.ts == main entry point file of node app
+ Angular boot(execute)
+ index.html
+ <app-root></app-root>
+ CALL==> main.ts--> boot-->AppModule(app/app.module.ts)-->
+ boot--> AppComponent(app/app.component.ts)
+bootstrapModule(AppModule) is called in main.ts
+
+declaration // components / directives/pipes
+imports //module
+providers //services
+property decorator  @Input  @Output
+Method Decorator   @HostListener
+--> parameter decorator @Inject
+
+Dynamic data binding (render)
+{{}}    : expression
+
+
+to display array or object == *ngFor
