@@ -1,0 +1,9 @@
+<h1>Property Binding Example </h1>
+<button (click)="abc()" [disabled]="buttonDisabled">CLICK</button>
+<div *ngIf="courses.length>0  else xyz" >
+    <h2 >Courses</h2>
+    <ul>
+        <li *ngFor="let item of courses">{{item}}</li>
+    </ul>
+</div>
+<ng-template #xyz>NO COURSE</ng-template>
