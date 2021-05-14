@@ -1,48 +1,38 @@
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit, OnChanges, SimpleChanges, Input, SimpleChange } from '@angular/core';
-import { Router } from '@angular/router';
+import { User } from './user';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import {CommonService} from 'src/app/common.service'
-
-@Component({
-  selector: 'app-Login',
-  templateUrl: './Login.component.html',
-  styleUrls: ['./Login.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class LoginComponent implements OnInit ,OnChanges{
-  @Input() myForm: FormGroup;
-  formGroup: FormGroup;
-  constructor(private CommonService: CommonService){}
-  ngOnInit(){
-    this.initForm();
-  }
-  ngOnChanges(changes: SimpleChanges) {
-    const MyFormChanges: SimpleChange = changes.myForm;
-    // To Check current values
-    console.log(MyFormChanges.currentValue)
+export class CommonService {
 
-    // To Check previous values
-    console.log(MyFormChanges.previousValue)
+  constructor(private http: HttpClient) { }
 
-    // To Set Current Values to fields using controls
- this.formGroup.controls['username'].setValue(MyFormChanges.currentValue.email);
-}
-initForm(){
-    this.formGroup = new FormGroup({
-      username: new FormControl('',[Validators.required]),
-      password: new FormControl('',[Validators.required]),
+  readonly rootURL = 'https://localhost:44306/api';
+  headers={
+    headers: new HttpHeaders({
+        'Content-Type': 'application/json'
     })
-  }
-  loginProcess(){
-    if(this.formGroup.valid){
-      this.CommonService.login(this.formGroup.value).subscribe(result=>{
-        if(result.success){
-          console.log(result);
-          alert(result.message);
-        }else{
-          alert(result.message);
-        }
-      })
-    }
 }
+  postDetail(user: User) {
+     var x=this.http.post(this.rootURL + '/Detail/SaveDetail',user,this.headers);
+     return x;
+  }
+  putDetail(user: User,id) {
+    return this.http.put(this.rootURL + '/Detail/'+ user, id);
+  }
+  deleteDetail(id) {
+    return this.http.delete(this.rootURL + '/Detail/MemberDeleteDetail/'+ id);
+  }
+
+  getData(){
+    return this.http.get(this.rootURL + '/Detail/CustomerGetDetails');
+  }
+
+login(data ):Observable<any>{
+  return this.http.post(`https://localhost:44306/api/Authenticate/Login`,data);
+}
+
 }
