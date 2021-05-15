@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Fetch JasonPlaceholder Posts</h2>
+  <button (click)="getPosts()">Get Post</button>
+  <div *ngFor="let post of postData">
+    <h4>{{post.title}}</h4>
+    <article>{{post.body}}</article>
+  <hr/>
+  </div>
+  </div>
