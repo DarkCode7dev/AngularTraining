@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Template Driven Form</h2>
+  <form #frm='ngForm' name="form" (ngSubmit)="frm.form.valid && postData()">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="name" class="form-control" [(ngModel)]="name" name="name" #nam="ngModel" required pattern="[a-zA-Z]+" />
+      <!-- errors -->
+      <div *ngIf="nam.invalid && nam.touched" class="alert alert-danger">
+          <div *ngIf="nam.errors.required">Name Is require</div>
+          <div *ngIf="nam.errors.pattern" >Only alphabet allow</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">Mobile</label>
+      <input type="name" class="form-control" [(ngModel)]="mobile" name="mobile" #mob="ngModel" required   pattern="[6-9][0-9]{0}"/>
+       <!-- errors -->
+      <div *ngIf="mob.invalid && mob.touched" class="alert alert-danger">
+          <div *ngIf="mob.errors.required">Mobile Is require</div>
+          <div *ngIf="mob.errors.pattern" >Only 10 digit allow</div>
+      </div>
+    </div>
+    <input type="submit" value="Login" class="btn btn-success" [disabled]="frm.invalid"/>
+  </form>
+</div>
