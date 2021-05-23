@@ -1,0 +1,19 @@
+
+ -> Parent to child through Input decorator 
+              -> create components 
+                -> parent component (parentinput)
+                .html 
+                  <button (click)="abc()"> Click Here </button>
+                 <app-childinput [mycount]="counter"></app-childinput>
+                .ts 
+                  counter=0;
+                  abc(){
+                    this.counter++;
+                  }
+                -> child component (childinput)
+                .html 
+                <h2> Parent component counter value is {{mycount}} </h2>
+                .ts 
+                import {Input} from '@angular/core';
+
+                @Input() mycount;
