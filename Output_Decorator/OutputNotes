@@ -1,0 +1,23 @@
+ 2. Child to parent through Output decorator with EventEmitter 
+              -> Parent :- outputparent 
+               .html 
+               {{counter}}
+               <outputchild (myevent)="xyz($event)"></outputchild>
+               .ts 
+               counter;
+               xyz(val)
+               {
+                 this.counter=val;
+               }
+              -> Child :- outputchild 
+               .html 
+               <h2> Child Component </h2>
+               <button (click)="abc()"> CLick Here </button>
+               .ts 
+               import {Output,EventEmitter} from '@angular/core';
+               @Output() myevent=new EventEmitter();
+               counter=0;
+               abc(){
+                  this.counter++;
+                  this.myevent.emit(this.counter);
+               }
