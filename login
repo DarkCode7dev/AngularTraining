@@ -1,25 +1,28 @@
-
-<div class="d-flex justify-content-center"><a [routerLink]="['customers']" class="btn btn-info" style="color:red">List</a><-------------><a [routerLink]="['create']" class="btn btn-info" [item] = "ParentItem"  (gretEvent)="greet()" style="color:red">Create</a></div>
-<div><router-outlet (gretEvent)="greet()"></router-outlet></div>
-
-
-
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-mypage',
-  templateUrl: './mypage.component.html',
-  styleUrls: ['./mypage.component.css']
-})
-export class MypageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-  greet(){
-    alert("Data Saved");
-  }
-
-
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+input.ng-touched.ng-invalid{
+  border-color: #dc3545;
 }
+
+input.ng-valid{
+  border-color: #28a745;
+}
+
+.green-icon{
+  color: #28a745;
+}
+.red-icon{
+  color: #dc3545;
+}
+
+#toast-container > div {
+  opacity:1;
+}
+
+table tr:hover{
+  cursor: pointer;
+}
+/*
+body{
+  background-image: url("https://wallpapercave.com/wp/wp2482995.jpg");
+} */
