@@ -1,28 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
-input.ng-touched.ng-invalid{
-  border-color: #dc3545;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Frontend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous">
+</head>
+<body>
+  <app-root></app-root>
 
-input.ng-valid{
-  border-color: #28a745;
-}
-
-.green-icon{
-  color: #28a745;
-}
-.red-icon{
-  color: #dc3545;
-}
-
-#toast-container > div {
-  opacity:1;
-}
-
-table tr:hover{
-  cursor: pointer;
-}
-/*
-body{
-  background-image: url("https://wallpapercave.com/wp/wp2482995.jpg");
-} */
+</body>
+</html>
