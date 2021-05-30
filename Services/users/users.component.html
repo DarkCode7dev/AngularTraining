@@ -1,0 +1,13 @@
+<h2>Fetch JasonPlaceholder User name and email and phone </h2>
+<img src="assets/loader.jpg" *ngIf="loading"/>
+<table class="table">
+  <tr>
+    <th>S.no</th> <th>Name</th> <th>Email</th> <th>Phone</th>
+  </tr>
+  <tr *ngFor="let user of usersData; let i=index">
+    <td>{{i+1}}</td>
+    <td>{{user.name|uppercase}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+  </tr>
+</table>
