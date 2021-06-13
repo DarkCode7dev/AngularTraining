@@ -1,0 +1,14 @@
+<h2> JsonPlaceHolder Users Name , Email and Phone </h2>
+<img src="assets/loader.png" *ngIf="loading"/>
+<table class="table">
+    <tr>
+        <th>S.no</th> <th> Name</th> <th>Email</th> <th>Phone</th>
+    </tr>
+    <tr *ngFor="let user of usersData|limitto:5; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.name|uppercase}}</td>
+        <td>{{user.email | lowercase}}</td>
+        <td>{{user.phone|slice:1:5}}</td>
+    </tr>
+</table>
+<button (click)="clickMe()"> Click Me</button>
