@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Products</h1>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let pro of proData">
+      <div class="card" style="width: 18rem;">
+        
+        <div class="card-body">
+          <h5 class="card-title">{{pro.pname}}</h5>
+          <p class="card-text">Price:Rs{{pro.price}} <br> 
+                                Quantity:{{pro.quantity}}
+          </p>
+          <a href="#" class="btn btn-primary">Edit</a>
+          <a href="javascript:void(0)" class="btn btn-danger" (click)="delProduct(pro.id)">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
