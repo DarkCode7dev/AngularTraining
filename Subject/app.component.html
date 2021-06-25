@@ -1,0 +1,9 @@
+<header>
+  <ul>
+    <li *ngFor="let cn of categories"><a routerLink="/category/{{cn}}" >{{cn|titlecase}}</a></li>
+  </ul>
+ {{mymessage}}
+</header>
+<section>
+  <router-outlet></router-outlet>   
+</section>
